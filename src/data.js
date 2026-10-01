@@ -32,8 +32,7 @@ export const experience = [
     {
         company: "Virtusa",
         role: "UI Developer",
-        // TODO: fill in the real start month.
-        period: "[Month YYYY] – Present",
+        period: "Jul 2026 – Present",
         context: "Leading US insurance client · Customer policy-servicing platform",
         points: [
             "Develop and maintain React features across multiple single-spa micro-frontends (policy management, protection details, documents) built on a shared component library and design system.",
@@ -47,8 +46,7 @@ export const experience = [
     {
         company: "Wipro",
         role: "Frontend Developer",
-        // TODO: fill in the real end month.
-        period: "Nov 2021 – [Month YYYY]",
+        period: "Nov 2021 – Jun 2026",
         context: "E-commerce platform",
         points: [
             "Built reusable React components, cutting UI development time by 20% and keeping the interface consistent.",
