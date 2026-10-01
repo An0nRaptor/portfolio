@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rahul Yadav · Frontend Developer</title>
+        <meta
+            name="description"
+            content="Rahul Yadav, Frontend Developer in Pune with 5 years of experience building fast, accessible React applications, micro-frontends and analytics-instrumented UIs."
+        />
+        <meta name="author" content="Rahul Yadav" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Rahul Yadav · Frontend Developer" />
+        <meta
+            property="og:description"
+            content="React · JavaScript · Micro-Frontends. 5 years building production web apps."
+        />
+        <meta property="og:image" content="/img/rahul.jpg" />
+        <meta name="theme-color" content="#0b1416" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Apply the saved/system theme before first paint (no flash). -->
+        <script>
+            (function () {
+                try {
+                    var saved = localStorage.getItem("theme");
+                    var dark = saved
+                        ? saved === "dark"
+                        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+                    if (dark) document.documentElement.classList.add("dark");
+                } catch (e) {}
+            })();
+        </script>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <!-- Static copy of the contact form so Netlify Forms detects it at
+             deploy time; the React form posts to the same "contact" name. -->
+        <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <textarea name="message"></textarea>
+            <input name="bot-field" />
+        </form>
+
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
+</html>

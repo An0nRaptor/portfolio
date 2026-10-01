@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+    body {
+        @apply bg-white font-sans text-slate-700 antialiased dark:bg-[#0b1416] dark:text-slate-300;
+    }
+    h1,
+    h2,
+    h3 {
+        @apply font-display text-slate-900 dark:text-white;
+    }
+    ::selection {
+        @apply bg-accent-200 text-accent-900;
+    }
+}
+
+@layer components {
+    .section {
+        @apply mx-auto max-w-content px-5 py-20 sm:px-8 md:py-28;
+    }
+    .eyebrow {
+        @apply font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent-600 dark:text-accent-400;
+    }
+    .section-title {
+        @apply mt-3 text-3xl font-bold tracking-tight sm:text-4xl;
+    }
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0b1416];
+    }
+    .btn-primary {
+        @apply btn bg-slate-900 text-white hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200;
+    }
+    .btn-ghost {
+        @apply btn border border-slate-300 text-slate-800 hover:border-slate-900 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-100 dark:hover:border-slate-400 dark:hover:bg-white/5;
+    }
+    .card {
+        @apply rounded-2xl border border-slate-200 bg-white dark:border-white/10 dark:bg-white/[0.03];
+    }
+    .tag {
+        @apply rounded-full bg-slate-100 px-2.5 py-1 font-mono text-[11px] font-medium text-slate-600 dark:bg-white/5 dark:text-slate-400;
+    }
+    .field {
+        @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500/30 dark:border-white/10 dark:bg-white/5 dark:text-white;
+    }
+}
+
+/* Reveal-on-scroll; hidden state only applies once JS has marked the page. */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
