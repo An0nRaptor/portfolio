@@ -15,12 +15,13 @@ export const profile = {
     headline:
         "I build fast, accessible React interfaces for products people rely on every day.",
     intro:
-        "Frontend Developer with 5 years of experience. I'm currently building features on a single-spa micro-frontend platform for a leading US insurer, covering UI, analytics instrumentation, testing and CI/CD.",
+        "Frontend Developer with 5 years of experience across Wipro, GlobalLogic and Virtusa. I'm currently building features on a single-spa micro-frontend platform for a leading US insurer, covering UI, analytics instrumentation, testing and CI/CD.",
     aboutTitle: "Building scalable, high-performance interfaces.",
     about: [
-        "At GlobalLogic, I spent over four years engineering the frontend of a large-scale e-commerce platform. I built a reusable React component library that cut UI development time by 20%, and delivered performance work (route-level code splitting, lazy loading and image optimisation) that reduced page load time by 40%.",
-        "At Virtusa, I deliver customer policy-servicing features for a leading US insurer on a single-spa micro-frontend architecture: independently deployed React applications sharing a common design system. I own features from design hand-off to production, covering component development, Adobe Analytics instrumentation through Adobe Launch, Jest unit testing against SonarQube quality gates, and feature-toggled releases through Jenkins CI/CD.",
-        "Beyond client work, I build full-stack applications end to end with React, Node.js/Express and MongoDB on serverless infrastructure, with a focus on clean architecture, accessibility and Core Web Vitals. This site is pre-rendered at build time and scores 99 on Lighthouse mobile performance."
+        "I began my career at Wipro, where I spent three and a half years engineering the frontend of a large-scale e-commerce platform. I built reusable React components and custom hooks that cut UI development time by 20%, and delivered performance work (code splitting, lazy loading and image optimisation) that reduced page load time by 40%.",
+        "As a Senior Software Developer at GlobalLogic, I worked on enterprise React and Node.js applications. I led architectural discussions on scalability and maintainability, defined coding standards and performance benchmarks, and built reusable component libraries and micro-frontends shared across multiple product lines.",
+        "Today at Virtusa, I deliver customer policy-servicing features for a leading US insurer on a single-spa micro-frontend architecture: independently deployed React applications sharing a common design system. I own features from design hand-off to production, covering component development, Adobe Analytics instrumentation through Adobe Launch, Jest unit testing against SonarQube quality gates, and feature-toggled releases through Jenkins CI/CD.",
+        "Beyond client work, I build full-stack applications end to end with React, Node.js/Express and MongoDB on serverless infrastructure, with a focus on clean architecture, accessibility and Core Web Vitals."
     ],
     stats: [
         { value: "5", label: "Years building for the web" },
@@ -46,28 +47,40 @@ export const experience = [
     },
     {
         company: "GlobalLogic",
-        role: "Frontend Developer",
-        period: "Nov 2021 – Jun 2026",
+        role: "Senior Software Developer",
+        period: "May 2025 – Jun 2026",
+        context: "Enterprise React and Node.js applications",
+        points: [
+            "Led architectural discussions and technical decisions to improve the scalability and maintainability of enterprise React and Node.js applications.",
+            "Defined and enforced coding standards and performance benchmarks, keeping large-scale modules consistent and fast.",
+            "Built reusable component libraries and micro-frontends, improving consistency and accelerating delivery across multiple product lines."
+        ],
+        stack: ["React", "TypeScript", "Node.js", "Micro-frontends", "Component libraries"]
+    },
+    {
+        company: "Wipro",
+        role: "Frontend Engineer",
+        period: "Nov 2021 – May 2025",
         context: "E-commerce platform",
         points: [
-            "Built reusable React components, cutting UI development time by 20% and keeping the interface consistent.",
+            "Built reusable React components and custom hooks, cutting UI development time by 20% and keeping the interface consistent.",
             "Improved performance with lazy loading, code splitting and image optimisation, reducing page load time by 40%.",
-            "Partnered with UX and backend teams on UI enhancements that increased user engagement by 25%.",
-            "Integrated product data through RESTful APIs and built custom Material-UI themes aligned with brand guidelines.",
+            "Partnered with UX and backend teams on UI enhancements that increased user engagement by 25%, integrating product data through RESTful APIs for real-time updates.",
+            "Built responsive layouts with CSS Grid and Flexbox and custom Material-UI themes aligned with brand guidelines.",
             "Mentored junior developers through code reviews and knowledge-sharing sessions."
         ],
-        stack: ["React", "Redux", "Material-UI", "REST APIs"]
+        stack: ["React", "Redux", "Material-UI", "REST APIs", "CSS Grid/Flexbox"]
     }
 ];
 
 export const skills = [
     {
         group: "Frontend",
-        items: ["React", "Redux", "JavaScript (ES6+)", "HTML5", "CSS3", "single-spa", "Tailwind CSS", "Material-UI", "shadcn/ui", "Radix UI"]
+        items: ["React", "TypeScript", "JavaScript (ES6+)", "Redux", "React Query", "React Router", "single-spa", "HTML5", "CSS3", "Tailwind CSS", "Material-UI", "Styled Components", "shadcn/ui"]
     },
     {
         group: "Testing & Quality",
-        items: ["Jest", "ESLint", "SonarQube", "Cross-browser testing"]
+        items: ["Jest", "React Testing Library", "ESLint", "SonarQube", "Cross-browser testing"]
     },
     {
         group: "Analytics",
@@ -79,7 +92,7 @@ export const skills = [
     },
     {
         group: "Tools & Delivery",
-        items: ["Git", "GitHub", "Vite", "npm", "Jenkins", "Vercel", "Netlify", "Postman", "Figma"]
+        items: ["Git", "GitHub", "Webpack", "Vite", "npm", "Jenkins", "Vercel", "Netlify", "Postman", "Figma"]
     }
 ];
 
