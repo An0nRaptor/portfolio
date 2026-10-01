@@ -96,7 +96,7 @@ export function About() {
     return (
         <section id="about" className="section">
             <div className="grid gap-10 md:grid-cols-[1fr_1.3fr] md:gap-12">
-                <SectionHeader eyebrow="About" title="Frontend engineer who cares about the details." />
+                <SectionHeader eyebrow="About" title={profile.aboutTitle} />
                 <div className="reveal space-y-5 text-base leading-relaxed text-slate-600 dark:text-slate-400">
                     {profile.about.map(p => (
                         <p key={p.slice(0, 24)}>{p}</p>

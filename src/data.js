@@ -16,10 +16,11 @@ export const profile = {
         "I build fast, accessible React interfaces for products people rely on every day.",
     intro:
         "Frontend Developer with 5 years of experience. I'm currently building features on a single-spa micro-frontend platform for a leading US insurer, covering UI, analytics instrumentation, testing and CI/CD.",
+    aboutTitle: "Building scalable, high-performance interfaces.",
     about: [
-        "I started out building a large e-commerce platform at Wipro. There I learned that performance and consistency are features: reusable component libraries, lazy loading and code splitting took page load time down by 40%.",
-        "Today at Virtusa I work across several independently deployed micro-frontends that share one design system. I take policy-servicing features from design hand-off to production: React UI, Adobe Analytics tracking, Jest coverage and feature-toggled releases.",
-        "Outside work I build full-stack side projects with the MERN stack and my own tools, like SnippetVault, which I use daily to move code between machines."
+        "At GlobalLogic, I spent over four years engineering the frontend of a large-scale e-commerce platform. I built a reusable React component library that cut UI development time by 20%, and delivered performance work (route-level code splitting, lazy loading and image optimisation) that reduced page load time by 40%.",
+        "At Virtusa, I deliver customer policy-servicing features for a leading US insurer on a single-spa micro-frontend architecture: independently deployed React applications sharing a common design system. I own features from design hand-off to production, covering component development, Adobe Analytics instrumentation through Adobe Launch, Jest unit testing against SonarQube quality gates, and feature-toggled releases through Jenkins CI/CD.",
+        "Beyond client work, I build full-stack applications end to end with React, Node.js/Express and MongoDB on serverless infrastructure, with a focus on clean architecture, accessibility and Core Web Vitals. This site is pre-rendered at build time and scores 99 on Lighthouse mobile performance."
     ],
     stats: [
         { value: "5", label: "Years building for the web" },
@@ -44,7 +45,7 @@ export const experience = [
         stack: ["React", "single-spa", "Jest", "Adobe Launch", "SonarQube", "Jenkins"]
     },
     {
-        company: "Wipro",
+        company: "GlobalLogic",
         role: "Frontend Developer",
         period: "Nov 2021 – Jun 2026",
         context: "E-commerce platform",
