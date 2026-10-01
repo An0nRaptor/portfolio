@@ -106,10 +106,10 @@ export const projects = [
     },
     {
         title: "TravelNest Booking",
-        year: "2023",
+        year: "2026",
         description:
-            "An Airbnb-style booking app with JWT authentication, listing search and detail pages, photo uploads, bookings and an admin panel for users and listings.",
-        stack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+            "An Airbnb-style booking app: search stays, browse photo galleries and book dates with server-side pricing and double-booking protection. Hosts can list, edit and manage their own places with photo uploads.",
+        stack: ["React", "Tailwind", "Express", "MongoDB", "JWT", "Netlify Functions"],
         image: "/img/booking.png",
         links: {
             live: "https://mern-booking-webapp.netlify.app",
