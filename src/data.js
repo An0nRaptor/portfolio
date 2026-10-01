@@ -5,7 +5,7 @@ export const profile = {
     role: "Frontend Developer",
     location: "Pune, India",
     email: "rahulyadavaudi06@gmail.com",
-    photo: "/img/rahul.jpg",
+    photo: "rahul", // responsive WebP set: rahul-320/480/640.webp
     // Drop the final PDF into /public with this name.
     resume: "/Rahul_Yadav_Resume.pdf",
     links: {
@@ -82,35 +82,22 @@ export const skills = [
     }
 ];
 
+// First project is shown as the large featured card. `image` is the base
+// name of the responsive WebP set in /public/img (name-640/960/1440.webp).
 export const projects = [
-    {
-        title: "SnippetVault",
-        year: "2026",
-        description:
-            "A personal tool that syncs files and code snippets between machines using Google Drive as the storage backend. Includes a server-side OAuth 2.0 flow with encrypted refresh-token cookies, resumable chunked uploads and in-browser zip browsing.",
-        stack: ["React", "Vite", "Tailwind", "Google Drive API", "OAuth 2.0", "Vercel"],
-        image: "/img/snippetvault.jpg",
-        links: {}
-    },
-    {
-        title: "Blogging Platform",
-        year: "2024",
-        description:
-            "A full-stack blogging platform with publishing, drafts, post analytics, likes, nested comment replies and real-time notifications.",
-        stack: ["React", "Node.js", "Express", "MongoDB", "Firebase Auth"],
-        image: "/img/blog.jpg",
-        links: {
-            live: "https://blogging-mern-webapp.netlify.app/",
-            github: "https://github.com/An0nRaptor/Blogging_mern_webapp"
-        }
-    },
     {
         title: "TravelNest Booking",
         year: "2026",
         description:
             "An Airbnb-style booking app: search stays, browse photo galleries and book dates with server-side pricing and double-booking protection. Hosts can list, edit and manage their own places with photo uploads.",
+        highlights: [
+            "React + Express API deployed as one Netlify site (serverless functions, no CORS)",
+            "Server-side pricing, date validation and double-booking protection",
+            "Photos stored in MongoDB GridFS and compressed in the browser before upload",
+            "One-click demo account so anyone can try booking"
+        ],
         stack: ["React", "Tailwind", "Express", "MongoDB", "JWT", "Netlify Functions"],
-        image: "/img/travelnest.jpg",
+        image: "travelnest",
         links: {
             live: "https://mern-booking-webapp.netlify.app",
             github: "https://github.com/An0nRaptor/Booking_webapp"
@@ -122,10 +109,31 @@ export const projects = [
         description:
             "A social app for travel moments: photo posts with likes, comments, tags, search, profiles and dark mode. Likes update instantly through optimistic Redux Toolkit Query cache updates.",
         stack: ["React", "Redux Toolkit", "Material UI", "Express", "MongoDB"],
-        image: "/img/memories.jpg",
+        image: "memories",
         links: {
             live: "https://create-memories-webapp.netlify.app/",
             github: "https://github.com/An0nRaptor/Mern_memories_webapp"
+        }
+    },
+    {
+        title: "SnippetVault",
+        year: "2026",
+        description:
+            "A personal tool that syncs files and code snippets between machines using Google Drive as the storage backend. Includes a server-side OAuth 2.0 flow with encrypted refresh-token cookies, resumable chunked uploads and in-browser zip browsing.",
+        stack: ["React", "Vite", "Tailwind", "Google Drive API", "OAuth 2.0", "Vercel"],
+        image: "snippetvault",
+        links: {}
+    },
+    {
+        title: "Blogging Platform",
+        year: "2024",
+        description:
+            "A full-stack blogging platform with publishing, drafts, post analytics, likes, nested comment replies and real-time notifications.",
+        stack: ["React", "Node.js", "Express", "MongoDB", "Firebase Auth"],
+        image: "blog",
+        links: {
+            live: "https://blogging-mern-webapp.netlify.app/",
+            github: "https://github.com/An0nRaptor/Blogging_mern_webapp"
         }
     }
 ];

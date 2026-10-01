@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://my-portfoliosite07.netlify.app/sitemap.xml

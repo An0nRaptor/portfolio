@@ -47,8 +47,8 @@ export default function Contact() {
     return (
         <section id="contact" className="section">
             <div className="reveal card relative overflow-hidden p-5 sm:p-12">
-                <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent-400/20 blur-3xl" />
-                <div className="relative grid gap-12 md:grid-cols-2">
+                <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgb(56_191_189/0.18),transparent_45%)]" />
+                <div className="relative grid gap-10 md:grid-cols-2 md:gap-12">
                     <div>
                         <p className="eyebrow">Contact</p>
                         <h2 className="section-title">Let’s build something together.</h2>
@@ -57,15 +57,15 @@ export default function Contact() {
                         </p>
                         <div className="mt-8 space-y-3">
                             <div className="flex min-w-0 items-center gap-2">
-                                <a href={`mailto:${profile.email}`} className="inline-flex min-w-0 items-center gap-3 break-all font-medium text-slate-900 hover:text-accent-600 dark:text-white dark:hover:text-accent-400">
+                                <a href={`mailto:${profile.email}`} className="inline-flex min-w-0 items-center gap-3 text-sm font-medium [overflow-wrap:anywhere] sm:text-base text-slate-900 hover:text-accent-700 dark:text-white dark:hover:text-accent-400">
                                     <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-slate-100 dark:bg-white/5"><Mail size={18} /></span>
                                     {profile.email}
                                 </a>
-                                <button onClick={copyEmail} className="flex-none rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-white/10 dark:hover:text-white" aria-label="Copy email address" title="Copy email">
+                                <button onClick={copyEmail} className="flex-none rounded-full p-2.5 text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-white/10 dark:hover:text-white" aria-label="Copy email address" title="Copy email">
                                     {copied ? <Check size={16} /> : <Copy size={16} />}
                                 </button>
                             </div>
-                            <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 font-medium text-slate-900 hover:text-accent-600 dark:text-white dark:hover:text-accent-400">
+                            <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 font-medium text-slate-900 hover:text-accent-700 dark:text-white dark:hover:text-accent-400">
                                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-white/5"><LinkedInIcon className="h-[18px] w-[18px]" /></span>
                                 Connect on LinkedIn
                             </a>

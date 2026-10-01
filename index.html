@@ -9,23 +9,47 @@
             content="Rahul Yadav, Frontend Developer in Pune with 5 years of experience building fast, accessible React applications, micro-frontends and analytics-instrumented UIs."
         />
         <meta name="author" content="Rahul Yadav" />
+        <link rel="canonical" href="https://my-portfoliosite07.netlify.app/" />
+
+        <!-- Link previews (LinkedIn, WhatsApp, X, Slack) -->
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://my-portfoliosite07.netlify.app/" />
         <meta property="og:title" content="Rahul Yadav · Frontend Developer" />
-        <meta
-            property="og:description"
-            content="React · JavaScript · Micro-Frontends. 5 years building production web apps."
-        />
-        <meta property="og:image" content="/img/rahul.jpg" />
-        <meta name="theme-color" content="#0b1416" />
+        <meta property="og:description" content="React · JavaScript · Micro-Frontends. 5 years building fast, accessible web apps." />
+        <meta property="og:image" content="https://my-portfoliosite07.netlify.app/img/og.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Rahul Yadav, Frontend Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0b1416" media="(prefers-color-scheme: dark)" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Hero photo is the first image on screen: fetch it right away. -->
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
-            rel="stylesheet"
+            rel="preload"
+            as="image"
+            type="image/webp"
+            imagesrcset="/img/rahul-320.webp 320w, /img/rahul-480.webp 480w, /img/rahul-640.webp 640w"
+            imagesizes="(min-width: 768px) 384px, (min-width: 640px) 240px, 192px"
+            fetchpriority="high"
         />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Rahul Yadav",
+                "jobTitle": "Frontend Developer",
+                "url": "https://my-portfoliosite07.netlify.app/",
+                "image": "https://my-portfoliosite07.netlify.app/img/og.jpg",
+                "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressCountry": "IN" },
+                "sameAs": ["https://github.com/An0nRaptor", "https://www.linkedin.com/in/rahul-yadav-0506501a0/"],
+                "knowsAbout": ["React", "JavaScript", "Micro-frontends", "Redux", "Tailwind CSS", "Node.js"]
+            }
+        </script>
 
         <!-- Apply the saved/system theme before first paint (no flash). -->
         <script>

@@ -5,9 +5,9 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Inter", "system-ui", "sans-serif"],
-                display: ['"Plus Jakarta Sans"', "Inter", "system-ui", "sans-serif"],
-                mono: ['"JetBrains Mono"', "ui-monospace", "monospace"]
+                sans: ["\"Inter Variable\"", "Inter", "system-ui", "sans-serif"],
+                display: ['"Plus Jakarta Sans Variable"', "system-ui", "sans-serif"],
+                mono: ["ui-monospace", "SFMono-Regular", "Cascadia Code", "Consolas", "monospace"]
             },
             colors: {
                 // One accent, used sparingly: links, highlights, focus.
