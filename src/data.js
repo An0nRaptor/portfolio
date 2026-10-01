@@ -118,10 +118,10 @@ export const projects = [
     },
     {
         title: "Memories",
-        year: "2023",
+        year: "2026",
         description:
-            "A social app for sharing memories: create, edit, delete and search posts by title or tags, with Redux state management and a Node/Express REST API.",
-        stack: ["React", "Redux", "Material-UI", "Node.js", "MongoDB"],
+            "A social app for travel moments: photo posts with likes, comments, tags, search, profiles and dark mode. Likes update instantly through optimistic Redux Toolkit Query cache updates.",
+        stack: ["React", "Redux Toolkit", "Material UI", "Express", "MongoDB"],
         image: "/img/memories.png",
         links: {
             live: "https://create-memories-webapp.netlify.app/",
