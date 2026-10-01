@@ -89,7 +89,7 @@ export const projects = [
         description:
             "A personal tool that syncs files and code snippets between machines using Google Drive as the storage backend. Includes a server-side OAuth 2.0 flow with encrypted refresh-token cookies, resumable chunked uploads and in-browser zip browsing.",
         stack: ["React", "Vite", "Tailwind", "Google Drive API", "OAuth 2.0", "Vercel"],
-        image: null, // rendered as a code-window illustration
+        image: "/img/snippetvault.jpg",
         links: {}
     },
     {
@@ -98,7 +98,7 @@ export const projects = [
         description:
             "A full-stack blogging platform with publishing, drafts, post analytics, likes, nested comment replies and real-time notifications.",
         stack: ["React", "Node.js", "Express", "MongoDB", "Firebase Auth"],
-        image: "/img/blog.png",
+        image: "/img/blog.jpg",
         links: {
             live: "https://blogging-mern-webapp.netlify.app/",
             github: "https://github.com/An0nRaptor/Blogging_mern_webapp"
@@ -110,7 +110,7 @@ export const projects = [
         description:
             "An Airbnb-style booking app: search stays, browse photo galleries and book dates with server-side pricing and double-booking protection. Hosts can list, edit and manage their own places with photo uploads.",
         stack: ["React", "Tailwind", "Express", "MongoDB", "JWT", "Netlify Functions"],
-        image: "/img/booking.png",
+        image: "/img/travelnest.jpg",
         links: {
             live: "https://mern-booking-webapp.netlify.app",
             github: "https://github.com/An0nRaptor/Booking_webapp"
@@ -122,7 +122,7 @@ export const projects = [
         description:
             "A social app for travel moments: photo posts with likes, comments, tags, search, profiles and dark mode. Likes update instantly through optimistic Redux Toolkit Query cache updates.",
         stack: ["React", "Redux Toolkit", "Material UI", "Express", "MongoDB"],
-        image: "/img/memories.png",
+        image: "/img/memories.jpg",
         links: {
             live: "https://create-memories-webapp.netlify.app/",
             github: "https://github.com/An0nRaptor/Mern_memories_webapp"
