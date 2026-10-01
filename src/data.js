@@ -18,10 +18,9 @@ export const profile = {
         "Frontend Developer with 5 years of experience across Wipro, GlobalLogic and Virtusa. I'm currently building features on a single-spa micro-frontend platform for a leading US insurer, covering UI, analytics instrumentation, testing and CI/CD.",
     aboutTitle: "Building scalable, high-performance interfaces.",
     about: [
-        "I began my career at Wipro, where I spent three and a half years engineering the frontend of a large-scale e-commerce platform. I built reusable React components and custom hooks that cut UI development time by 20%, and delivered performance work (code splitting, lazy loading and image optimisation) that reduced page load time by 40%.",
-        "As a Senior Software Developer at GlobalLogic, I worked on enterprise React and Node.js applications. I led architectural discussions on scalability and maintainability, defined coding standards and performance benchmarks, and built reusable component libraries and micro-frontends shared across multiple product lines.",
-        "Today at Virtusa, I deliver customer policy-servicing features for a leading US insurer on a single-spa micro-frontend architecture: independently deployed React applications sharing a common design system. I own features from design hand-off to production, covering component development, Adobe Analytics instrumentation through Adobe Launch, Jest unit testing against SonarQube quality gates, and feature-toggled releases through Jenkins CI/CD.",
-        "Beyond client work, I build full-stack applications end to end with React, Node.js/Express and MongoDB on serverless infrastructure, with a focus on clean architecture, accessibility and Core Web Vitals."
+        "Frontend engineer with 5 years across Wipro, GlobalLogic and Virtusa, specialising in React, TypeScript and micro-frontend architecture.",
+        "At Wipro I cut an e-commerce platform’s page load time by 40%; at GlobalLogic I built shared component libraries and micro-frontends for enterprise products. Today at Virtusa, I ship policy-servicing features for a leading US insurer, from React UI and analytics to tested, feature-toggled releases.",
+        "Outside work, I build full-stack apps with React, Node.js and MongoDB."
     ],
     stats: [
         { value: "5", label: "Years building for the web" },
