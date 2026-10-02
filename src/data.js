@@ -17,9 +17,9 @@ export const profile = {
         "Frontend Developer with nearly 5 years of experience across Wipro, GlobalLogic and Virtusa. I currently build features on a single-spa micro-frontend platform for a leading US insurance client.",
     aboutTitle: "Building scalable, high-performance interfaces.",
     about: [
-        "Frontend engineer with nearly 5 years across Wipro, GlobalLogic and Virtusa, specialising in React, TypeScript and micro-frontend architecture.",
-        "At Wipro I cut an e-commerce platform’s page load time by 40%; at GlobalLogic I built reusable component libraries and micro-frontends for enterprise products. Today at Virtusa, I build policy-servicing features for a leading US insurance client.",
-        "Outside work, I build full-stack apps with React, Node.js and MongoDB."
+        "I’m a frontend engineer specialising in React, TypeScript and micro-frontend architecture. I currently work as a Senior Software Engineer at Virtusa, building customer-facing features for a leading US insurance client.",
+        "I care about fast, accessible interfaces and maintainable code: reusable component libraries, performance budgets and well-tested releases. I work closely with designers, backend engineers and product owners to take features from first mock-up to production, and I instrument what I ship with analytics so decisions are based on real usage.",
+        "Outside work, I build full-stack apps with React, Node.js and MongoDB, like the projects below, and I’ve contributed to MDN Web Docs."
     ],
     stats: [
         { value: "4.5+", label: "Years of professional experience" },
