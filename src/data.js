@@ -14,15 +14,15 @@ export const profile = {
     headline:
         "I build fast, accessible React interfaces for products people rely on every day.",
     intro:
-        "Frontend Developer with 5 years of experience across Wipro, GlobalLogic and Virtusa. I'm currently building features on a single-spa micro-frontend platform for a leading US insurer, covering UI, analytics instrumentation, testing and CI/CD.",
+        "Frontend Developer with nearly 5 years of experience across Wipro, GlobalLogic and Virtusa. I currently build features on a single-spa micro-frontend platform for a leading US insurance client.",
     aboutTitle: "Building scalable, high-performance interfaces.",
     about: [
-        "Frontend engineer with 5 years across Wipro, GlobalLogic and Virtusa, specialising in React, TypeScript and micro-frontend architecture.",
-        "At Wipro I cut an e-commerce platform’s page load time by 40%; at GlobalLogic I built shared component libraries and micro-frontends for enterprise products. Today at Virtusa, I ship policy-servicing features for a leading US insurer, from React UI and analytics to tested, feature-toggled releases.",
+        "Frontend engineer with nearly 5 years across Wipro, GlobalLogic and Virtusa, specialising in React, TypeScript and micro-frontend architecture.",
+        "At Wipro I cut an e-commerce platform’s page load time by 40%; at GlobalLogic I built reusable component libraries and micro-frontends for enterprise products. Today at Virtusa, I build policy-servicing features for a leading US insurance client.",
         "Outside work, I build full-stack apps with React, Node.js and MongoDB."
     ],
     stats: [
-        { value: "5", label: "Years building for the web" },
+        { value: "4.5+", label: "Years of professional experience" },
         { value: "40%", label: "Faster page loads delivered" },
         { value: "MFE", label: "Micro-frontend platform experience" }
     ]
@@ -31,33 +31,32 @@ export const profile = {
 export const experience = [
     {
         company: "Virtusa",
-        role: "UI Developer",
-        period: "Jul 2026 – Present",
+        role: "Senior Software Engineer",
+        period: "Feb 2026 – Present",
         context: "Leading US insurance client · Customer policy-servicing platform",
         points: [
-            "Develop and maintain React features across multiple single-spa micro-frontends (policy management, protection details, documents) built on a shared component library and design system.",
-            "Built policy-change features including LLC/Trust member management, a fortified-roof discount flow and state-specific coverage rules for a new-state rollout.",
-            "Implemented Adobe Analytics tracking through Adobe Launch rules (page-load and click events, props/eVars) and validated data across environments.",
-            "Wrote Jest unit tests to meet coverage and SonarQube quality gates, and shipped feature-toggled releases through Jenkins CI/CD.",
-            "Root-caused production UI defects, including a layout regression traced to a shared component-library upgrade."
+            "Develop React features across multiple single-spa micro-frontends built on a shared component library and design system.",
+            "Build policy-servicing features in collaboration with backend, UX and product teams, from design hand-off to release.",
+            "Implement web analytics tracking with Adobe Analytics and Adobe Launch.",
+            "Write Jest unit tests to meet code-quality gates (SonarQube) and support releases through Jenkins CI/CD."
         ],
-        stack: ["React", "single-spa", "Jest", "Adobe Launch", "SonarQube", "Jenkins"]
+        stack: ["React", "single-spa", "Jest", "Adobe Analytics", "Jenkins"]
     },
     {
         company: "GlobalLogic",
-        role: "Senior Software Developer",
-        period: "May 2025 – Jun 2026",
+        role: "Engineer",
+        period: "May 2025 – Dec 2025",
         context: "Enterprise React and Node.js applications",
         points: [
-            "Led architectural discussions and technical decisions to improve the scalability and maintainability of enterprise React and Node.js applications.",
-            "Defined and enforced coding standards and performance benchmarks, keeping large-scale modules consistent and fast.",
-            "Built reusable component libraries and micro-frontends, improving consistency and accelerating delivery across multiple product lines."
+            "Developed features for enterprise React and Node.js applications and contributed to architecture discussions on scalability and maintainability.",
+            "Built reusable component libraries and micro-frontends used across multiple product lines.",
+            "Applied team coding standards and performance benchmarks through code reviews."
         ],
-        stack: ["React", "TypeScript", "Node.js", "Micro-frontends", "Component libraries"]
+        stack: ["React", "TypeScript", "Node.js", "Micro-frontends"]
     },
     {
         company: "Wipro",
-        role: "Frontend Engineer",
+        role: "Project Engineer",
         period: "Nov 2021 – May 2025",
         context: "E-commerce platform",
         points: [
