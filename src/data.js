@@ -136,11 +136,11 @@ export const projects = [
         links: {}
     },
     {
-        title: "Blogging Platform",
-        year: "2024",
+        title: "Blogspace",
+        year: "2024, rebuilt 2026",
         description:
-            "A full-stack blogging platform with publishing, drafts, post analytics, likes, nested comment replies and real-time notifications.",
-        stack: ["React", "Node.js", "Express", "MongoDB", "Firebase Auth"],
+            "A full-stack blogging platform with a block-based rich-text editor, drafts, a writer dashboard with post stats, likes, nested comments and notifications. Hardened API (author-only edits, sanitised content) deployed as serverless functions.",
+        stack: ["React", "Tailwind", "Express", "MongoDB", "AWS S3", "Netlify Functions"],
         image: "blog",
         links: {
             live: "https://blogging-mern-webapp.netlify.app/",
