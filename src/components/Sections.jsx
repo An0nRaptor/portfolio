@@ -2,8 +2,8 @@ import { ArrowRight, ArrowUpRight, ArrowUp, Check, Download, MapPin, Mail } from
 import { profile, experience, skills, projects, credentials } from "../data.js";
 import { GitHubIcon, LinkedInIcon } from "./Icons.jsx";
 
-// Responsive WebP from /public/img/<name>-<width>.webp. `eager` is for the
-// above-the-fold hero photo (loads first, high priority).
+// Responsive WebP from /public/img/<name>-<width>.webp. `eager` is for
+// above-the-fold images (load first, high priority).
 function Picture({ name, widths, sizes, alt, eager = false, width, height, className = "" }) {
     return (
         <img
@@ -45,48 +45,44 @@ export function Hero() {
             />
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_50%_-5%,rgb(56_191_189/0.22),transparent_70%)] dark:bg-[radial-gradient(ellipse_60%_45%_at_50%_-5%,rgb(31_163_163/0.16),transparent_70%)]" />
 
-            <div className="relative mx-auto grid max-w-content items-center gap-12 px-5 pb-16 pt-28 sm:px-8 md:grid-cols-[1.4fr_1fr] md:gap-14 md:pb-28 md:pt-40">
-                <div className="order-2 md:order-1">
-                    <p className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
-                        <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
-                        {profile.role}
-                        <span className="inline-flex items-center gap-1"><MapPin size={12} /> {profile.location}</span>
-                    </p>
-                    <h1 className="mt-6 text-[2.5rem] font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.5rem]">
-                        Hi, I’m {profile.name}.
-                        <span className="mt-3 block bg-gradient-to-r from-accent-700 to-sky-700 bg-clip-text text-2xl font-bold leading-snug text-transparent sm:text-3xl lg:text-[2.1rem] dark:from-accent-300 dark:to-sky-400">
-                            {profile.headline}
-                        </span>
-                    </h1>
-                    <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">{profile.intro}</p>
-                    <div className="mt-8 flex flex-wrap items-center gap-3">
-                        <a href="#projects" className="btn-primary">
-                            View my work <ArrowRight size={16} />
-                        </a>
-                        <a href="#contact" className="btn-ghost">Get in touch</a>
-                        <span className="mx-1 hidden h-6 w-px bg-slate-200 sm:block dark:bg-white/10" />
-                        <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-full p-2.5 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-white">
-                            <GitHubIcon className="h-5 w-5" />
-                        </a>
-                        <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="rounded-full p-2.5 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-white">
-                            <LinkedInIcon className="h-5 w-5" />
-                        </a>
-                    </div>
+            <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-20 pt-32 text-center sm:px-8 md:pb-28 md:pt-44">
+                <p className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
+                    {profile.role}
+                    <span className="inline-flex items-center gap-1"><MapPin size={12} /> {profile.location}</span>
+                </p>
+                <h1 className="mt-7 text-[2.6rem] font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+                    Hi, I’m {profile.name}.
+                    <span className="mx-auto mt-4 block max-w-3xl bg-gradient-to-r from-accent-700 to-sky-700 bg-clip-text pb-1 text-2xl font-bold leading-[1.3] text-transparent sm:text-3xl lg:text-[2.4rem] dark:from-accent-300 dark:to-sky-400">
+                        {profile.headline}
+                    </span>
+                </h1>
+                <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">{profile.intro}</p>
+                <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+                    <a href="#projects" className="btn-primary">
+                        View my work <ArrowRight size={16} />
+                    </a>
+                    <a href="#contact" className="btn-ghost">Get in touch</a>
+                    <span className="mx-1 hidden h-6 w-px bg-slate-200 sm:block dark:bg-white/10" />
+                    <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-full p-2.5 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-white">
+                        <GitHubIcon className="h-5 w-5" />
+                    </a>
+                    <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="rounded-full p-2.5 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-white">
+                        <LinkedInIcon className="h-5 w-5" />
+                    </a>
                 </div>
 
-                <div className="relative order-1 mx-auto w-48 sm:w-60 md:order-2 md:w-full md:max-w-sm">
-                    <div aria-hidden="true" className="absolute -inset-2.5 rotate-3 rounded-[2rem] bg-gradient-to-br from-accent-400 to-sky-500 opacity-80 sm:-inset-3" />
-                    <Picture
-                        name={profile.photo}
-                        widths={[320, 480, 640]}
-                        sizes="(min-width: 768px) 384px, (min-width: 640px) 240px, 192px"
-                        alt={`Portrait of ${profile.name}`}
-                        width={640}
-                        height={640}
-                        eager
-                        className="relative aspect-square w-full rounded-[1.75rem] object-cover shadow-2xl"
-                    />
-                </div>
+                {/* Career path, oldest to current */}
+                <ol className="mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-slate-600 dark:text-slate-400" aria-label="Career path">
+                    {[...experience].reverse().map((job, i, all) => (
+                        <li key={job.company} className="flex items-center gap-3">
+                            <span className={i === all.length - 1 ? "rounded-full bg-accent-50 px-3 py-1 font-semibold text-accent-800 ring-1 ring-accent-200 dark:bg-accent-500/10 dark:text-accent-300 dark:ring-accent-500/30" : "font-medium"}>
+                                {job.company}
+                            </span>
+                            {i < all.length - 1 && <ArrowRight size={14} aria-hidden="true" className="text-slate-400" />}
+                        </li>
+                    ))}
+                </ol>
             </div>
         </section>
     );

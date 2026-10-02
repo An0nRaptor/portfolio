@@ -5,7 +5,6 @@ export const profile = {
     role: "Frontend Developer",
     location: "Pune, India",
     email: "rahulyadavaudi06@gmail.com",
-    photo: "rahul", // responsive WebP set: rahul-320/480/640.webp
     // Drop the final PDF into /public with this name.
     resume: "/Rahul_Yadav_Resume.pdf",
     links: {
