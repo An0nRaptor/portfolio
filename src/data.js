@@ -97,6 +97,24 @@ export const skills = [
 // name of the responsive WebP set in /public/img (name-640/960/1440.webp).
 export const projects = [
     {
+        title: "FlowSpace",
+        year: "2026",
+        description:
+            "A Trello-style workspace for teams: Kanban board, table and calendar views, roles and invite links. Every change shows up live for teammates, with @mention comments, notifications, checklists, labels, file attachments and email reminders.",
+        highlights: [
+            "Real-time updates over Socket.io, authenticated with the same session cookie as the REST API",
+            "Role-based permissions (owner, admin, member) enforced on every API route",
+            "Board, table and calendar views; drag cards between columns or days",
+            "One-click demo: every visitor gets a private sample team workspace"
+        ],
+        stack: ["React", "TypeScript", "TanStack Query", "Socket.io", "Express", "MongoDB"],
+        image: "flowspace",
+        links: {
+            live: "https://flowspace-rahul.netlify.app",
+            github: "https://github.com/An0nRaptor/flowspace"
+        }
+    },
+    {
         title: "TravelNest Booking",
         year: "2026",
         description:
@@ -112,17 +130,6 @@ export const projects = [
         links: {
             live: "https://mern-booking-webapp.netlify.app",
             github: "https://github.com/An0nRaptor/Booking_webapp"
-        }
-    },
-    {
-        title: "FlowSpace",
-        year: "2026",
-        description:
-            "A Trello-style workspace for teams: Kanban board, table and calendar views, roles and invite links. Every change shows up live for teammates over Socket.io, with @mention comments, notifications, checklists, labels, file attachments and email reminders.",
-        stack: ["React", "TypeScript", "TanStack Query", "Socket.io", "Express", "MongoDB"],
-        image: "flowspace",
-        links: {
-            github: "https://github.com/An0nRaptor/flowspace"
         }
     },
     {
