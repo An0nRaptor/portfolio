@@ -284,11 +284,12 @@ export function Projects() {
         <section id="projects" className="border-t border-slate-200 bg-slate-50/70 dark:border-white/5 dark:bg-white/[0.015]">
             <div className="section">
                 <SectionHeader eyebrow="Projects" title="Things I’ve built">
-                    Side projects where I own everything, from the data model to deployment. All live, all with source code.
+                    Side projects where I own everything, from the data model to deployment.
                 </SectionHeader>
                 <div className="mt-12 space-y-6">
                     <FeaturedProject project={featured} />
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {/* Three columns only when the cards fill whole rows; otherwise two. */}
+                    <div className={`grid gap-6 sm:grid-cols-2 ${rest.length % 3 === 0 ? "lg:grid-cols-3" : ""}`}>
                         {rest.map(project => <ProjectCard key={project.title} project={project} />)}
                     </div>
                 </div>

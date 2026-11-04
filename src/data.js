@@ -85,7 +85,7 @@ export const skills = [
     },
     {
         group: "Backend & Data",
-        items: ["Node.js", "Express.js", "MongoDB", "REST APIs", "JWT auth"]
+        items: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Socket.io", "JWT auth"]
     },
     {
         group: "Tools & Delivery",
@@ -112,6 +112,17 @@ export const projects = [
         links: {
             live: "https://mern-booking-webapp.netlify.app",
             github: "https://github.com/An0nRaptor/Booking_webapp"
+        }
+    },
+    {
+        title: "FlowSpace",
+        year: "2026",
+        description:
+            "A Trello-style workspace for teams: Kanban board, table and calendar views, roles and invite links. Every change shows up live for teammates over Socket.io, with @mention comments, notifications, checklists, labels, file attachments and email reminders.",
+        stack: ["React", "TypeScript", "TanStack Query", "Socket.io", "Express", "MongoDB"],
+        image: "flowspace",
+        links: {
+            github: "https://github.com/An0nRaptor/flowspace"
         }
     },
     {
