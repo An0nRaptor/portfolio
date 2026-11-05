@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight, ArrowUp, Check, Download, MapPin, Mail } from "lucide-react";
 import { profile, experience, skills, projects, credentials } from "../data.js";
-import { GitHubIcon, LinkedInIcon } from "./Icons.jsx";
+import { GitHubIcon, LinkedInIcon, SkillIcon } from "./Icons.jsx";
 
 // Responsive WebP from /public/img/<name>-<width>.webp. `eager` is for
 // above-the-fold images (load first, high priority).
@@ -168,7 +168,8 @@ export function Skills() {
                         <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400">{group.group}</h3>
                         <ul className="mt-4 flex flex-wrap gap-2">
                             {group.items.map(item => (
-                                <li key={item} className="rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-medium text-slate-800 dark:border-white/10 dark:text-slate-200">
+                                <li key={item} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-medium text-slate-800 dark:border-white/10 dark:text-slate-200">
+                                    <SkillIcon name={item} />
                                     {item}
                                 </li>
                             ))}

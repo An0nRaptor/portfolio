@@ -1,3 +1,6 @@
+import { Boxes, ChartLine, Code, Globe, Network, Rocket } from "lucide-react";
+import { SKILL_LOGOS } from "./skillLogos.js";
+
 // Brand marks aren't in lucide, so they're inlined here.
 export function GitHubIcon(props) {
     return (
@@ -13,4 +16,26 @@ export function LinkedInIcon(props) {
             <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
         </svg>
     );
+}
+
+// Skills without a brand logo get a lucide icon instead.
+const SKILL_FALLBACKS = {
+    "single-spa": Boxes,
+    "Adobe Analytics": ChartLine,
+    "Adobe Launch": Rocket,
+    "Cross-browser testing": Globe,
+    "REST APIs": Network
+};
+
+export function SkillIcon({ name, className = "h-4 w-4" }) {
+    const logo = SKILL_LOGOS[name];
+    if (logo) {
+        return (
+            <svg aria-hidden="true" className={`${className} shrink-0`}>
+                <use href={`/img/skills.svg#${logo}`} />
+            </svg>
+        );
+    }
+    const Fallback = SKILL_FALLBACKS[name] || Code;
+    return <Fallback aria-hidden="true" className={`${className} shrink-0 text-accent-600 dark:text-accent-400`} />;
 }

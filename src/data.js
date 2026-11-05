@@ -22,7 +22,7 @@ export const profile = {
         "Outside work, I build full-stack apps with React, Node.js and MongoDB, like the projects below, and I’ve contributed to MDN Web Docs."
     ],
     stats: [
-        { value: "4.5+", label: "Years of professional experience" },
+        { value: "~5", label: "Years of professional experience" },
         { value: "40%", label: "Faster page loads delivered" },
         { value: "MFE", label: "Micro-frontend platform experience" }
     ]
@@ -73,7 +73,7 @@ export const experience = [
 export const skills = [
     {
         group: "Frontend",
-        items: ["React", "TypeScript", "JavaScript (ES6+)", "Redux", "React Query", "React Router", "single-spa", "HTML5", "CSS3", "Tailwind CSS", "Material-UI", "Styled Components", "shadcn/ui"]
+        items: ["React", "TypeScript", "JavaScript (ES6+)", "Redux", "TanStack Query", "React Router", "single-spa", "HTML5", "CSS3", "Tailwind CSS", "Material-UI", "Styled Components", "shadcn/ui"]
     },
     {
         group: "Testing & Quality",
