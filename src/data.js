@@ -168,8 +168,8 @@ export const projects = [
 ];
 
 export const credentials = [
-    { title: "Namaste React", detail: "React certification", year: "2024" },
-    { title: "HTML, CSS, and JavaScript for Web Developers", detail: "Coursera", year: "2024" },
+    { title: "Meta Front-End Developer Professional Certificate", detail: "Meta · Coursera", year: "2026" },
+    { title: "Generative AI for Everyone", detail: "DeepLearning.AI · Coursera", year: "2026" },
     {
         title: "MDN Web Docs contributor",
         detail: "Improved the “Comparing dates and strings” section of the JavaScript reference",
