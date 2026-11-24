@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar.jsx";
-import { Hero, About, Experience, Skills, Projects, Credentials, Footer } from "./components/Sections.jsx";
+import { Hero, About, Experience, Skills, Learning, Projects, Credentials, Footer } from "./components/Sections.jsx";
 import Contact from "./components/Contact.jsx";
 import useReveal from "./useReveal.js";
 
@@ -16,6 +16,7 @@ export default function App() {
                 <About />
                 <Experience />
                 <Skills />
+                <Learning />
                 <Projects />
                 <Credentials />
                 <Contact />

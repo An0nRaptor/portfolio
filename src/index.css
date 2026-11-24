@@ -55,22 +55,128 @@
     }
 }
 
-/* Reveal-on-scroll; hidden state only applies once JS has marked the page. */
+/* Reveal-on-scroll; hidden state only applies once JS has marked the page.
+   useReveal sets a per-item transition-delay so groups arrive staggered. */
 .js .reveal {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(28px) scale(0.985);
     transition:
-        opacity 0.6s ease,
-        transform 0.6s ease;
+        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .js .reveal.is-visible {
     opacity: 1;
     transform: none;
 }
+
+/* Hero aurora: two large soft gradients drifting slowly. Only transform is
+   animated, so it stays cheap to paint. */
+.aurora-a,
+.aurora-b {
+    position: absolute;
+    border-radius: 9999px;
+}
+.aurora-a {
+    left: -18rem;
+    top: -26rem;
+    width: 58rem;
+    height: 58rem;
+    background: radial-gradient(circle, rgb(31 163 163 / 0.2), transparent 62%);
+    animation: drift-a 18s ease-in-out infinite alternate;
+}
+.aurora-b {
+    right: -20rem;
+    top: -14rem;
+    width: 52rem;
+    height: 52rem;
+    background: radial-gradient(circle, rgb(14 165 233 / 0.14), transparent 62%);
+    animation: drift-b 23s ease-in-out infinite alternate;
+}
+.dark .aurora-a {
+    background: radial-gradient(circle, rgb(31 163 163 / 0.24), transparent 62%);
+}
+@keyframes drift-a {
+    to {
+        transform: translate(16rem, 7rem) scale(1.1);
+    }
+}
+@keyframes drift-b {
+    to {
+        transform: translate(-14rem, 9rem) scale(0.92);
+    }
+}
+
+/* Blinking text caret (typed focus word, code card). */
+.caret {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    margin-left: 2px;
+    vertical-align: -0.15em;
+    background: currentColor;
+    animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Code card: lines appear one by one, then the card floats gently. */
+.code-line {
+    animation: code-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes code-in {
+    from {
+        opacity: 0;
+        transform: translateX(-8px);
+    }
+}
+.float-slow {
+    animation: float 7s ease-in-out infinite;
+}
+@keyframes float {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Tilt cards (TiltCard in Motion.jsx): cursor glow + accent edge on hover. */
+.tilt {
+    transition:
+        transform 0.3s ease-out,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+.tilt-glow {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(480px circle at var(--mx, 50%) var(--my, 50%), rgb(31 163 163 / 0.13), transparent 45%);
+}
+.tilt:hover .tilt-glow {
+    opacity: 1;
+}
+.tilt:hover {
+    border-color: rgb(31 163 163 / 0.45);
+    box-shadow: 0 24px 60px -24px rgb(31 163 163 / 0.35);
+}
+
 @media (prefers-reduced-motion: reduce) {
     .js .reveal {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+    .aurora-a,
+    .aurora-b,
+    .caret,
+    .code-line,
+    .float-slow {
+        animation: none;
     }
 }

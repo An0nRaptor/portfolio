@@ -18,14 +18,19 @@ export default function useReveal() {
         });
         document.documentElement.classList.add("js");
 
+        // Items that enter together (a row of cards) arrive one after another.
+        // The delay is cleared afterwards so it never slows hover transitions.
         const observer = new IntersectionObserver(
             entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                        observer.unobserve(entry.target);
-                    }
-                });
+                entries
+                    .filter(entry => entry.isIntersecting)
+                    .forEach((entry, i) => {
+                        const el = entry.target;
+                        el.style.transitionDelay = `${Math.min(i, 5) * 90}ms`;
+                        el.classList.add("is-visible");
+                        el.addEventListener("transitionend", () => (el.style.transitionDelay = ""), { once: true });
+                        observer.unobserve(el);
+                    });
             },
             { rootMargin: "0px 0px -8% 0px" }
         );

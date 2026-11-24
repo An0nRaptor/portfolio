@@ -13,6 +13,18 @@ export const profile = {
     },
     headline:
         "I build fast, accessible React interfaces for products people rely on every day.",
+    // Cycled one at a time in the hero ("focus: ...").
+    focus: ["React", "Micro-frontends", "Performance", "Accessibility", "TypeScript"],
+    // The code card beside the hero text.
+    codeCard: {
+        file: "rahul.ts",
+        fields: [
+            { key: "role", value: "Senior Software Engineer" },
+            { key: "stack", value: ["React", "TypeScript", "single-spa"] },
+            { key: "ships", value: "policy-servicing UIs" },
+            { key: "cares", value: ["performance", "a11y", "clean code"] }
+        ]
+    },
     intro:
         "Frontend Developer with nearly 5 years of experience across Wipro, GlobalLogic and Virtusa. I currently build features on a single-spa micro-frontend platform for a leading US insurance client.",
     aboutTitle: "Building scalable, high-performance interfaces.",
@@ -21,10 +33,12 @@ export const profile = {
         "I care about fast, accessible interfaces and maintainable code: reusable component libraries, performance budgets and well-tested releases. I work closely with designers, backend engineers and product owners to take features from first mock-up to production, and I instrument what I ship with analytics so decisions are based on real usage.",
         "Outside work, I build full-stack apps with React, Node.js and MongoDB, like the projects below, and I’ve contributed to MDN Web Docs."
     ],
+    // `count` stats count up from 0; text-only values decode in instead.
+    // `icon` is a key of STAT_ICONS in Sections.jsx.
     stats: [
-        { value: "~5", label: "Years of professional experience" },
-        { value: "40%", label: "Faster page loads delivered" },
-        { value: "MFE", label: "Micro-frontend platform experience" }
+        { value: "~5", count: 5, prefix: "~", label: "Years of professional experience", icon: "experience" },
+        { value: "40%", count: 40, suffix: "%", label: "Faster page loads delivered", icon: "speed" },
+        { value: "MFE", label: "Micro-frontend platform experience", icon: "architecture" }
     ]
 };
 
@@ -66,8 +80,22 @@ export const experience = [
             "Built responsive layouts with CSS Grid and Flexbox and custom Material-UI themes aligned with brand guidelines.",
             "Mentored junior developers through code reviews and knowledge-sharing sessions."
         ],
+        // Headline numbers from the points above, shown as tiles.
+        metrics: [
+            { count: 40, suffix: "%", label: "faster page loads" },
+            { count: 25, suffix: "%", label: "more user engagement" },
+            { count: 20, suffix: "%", label: "less UI dev time" }
+        ],
         stack: ["React", "Redux", "Material-UI", "REST APIs", "CSS Grid/Flexbox"]
     }
+];
+
+// "Currently learning" cards. `icon` is a key of LEARNING_ICONS in Sections.jsx.
+export const learning = [
+    { title: "Next.js", detail: "App Router, server components and streaming, to bring server rendering into my React work.", icon: "next" },
+    { title: "Docker", detail: "Containerising my Node and Express side projects for repeatable local and CI setups.", icon: "docker" },
+    { title: "AWS", detail: "Core services like S3, Lambda and CloudFront for deploying full-stack apps.", icon: "aws" },
+    { title: "Generative AI", detail: "Adding LLM-powered features to web apps, building on the DeepLearning.AI course.", icon: "ai" }
 ];
 
 export const skills = [
