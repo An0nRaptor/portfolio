@@ -95,7 +95,7 @@ export const learning = [
     { title: "Next.js", detail: "App Router, server components and streaming, to bring server rendering into my React work.", icon: "next" },
     { title: "Docker", detail: "Containerising my Node and Express side projects for repeatable local and CI setups.", icon: "docker" },
     { title: "AWS", detail: "Core services like S3, Lambda and CloudFront for deploying full-stack apps.", icon: "aws" },
-    { title: "Generative AI", detail: "Adding LLM-powered features to web apps, building on the DeepLearning.AI course.", icon: "ai" }
+    { title: "Generative AI", detail: "Building LLM features into web apps, starting with an AI task generator in FlowSpace on the Claude API.", icon: "ai" }
 ];
 
 export const skills = [
@@ -133,9 +133,10 @@ export const projects = [
             "Real-time updates over Socket.io, authenticated with the same session cookie as the REST API",
             "Role-based permissions (owner, admin, member) enforced on every API route",
             "Board, table and calendar views; drag cards between columns or days",
-            "One-click demo: every visitor gets a private sample team workspace"
+            "One-click demo: every visitor gets a private sample team workspace",
+            "AI task generator: paste meeting notes and Claude turns them into reviewable tasks (schema-validated output, per-IP rate limit)"
         ],
-        stack: ["React", "TypeScript", "TanStack Query", "Socket.io", "Express", "MongoDB"],
+        stack: ["React", "TypeScript", "TanStack Query", "Socket.io", "Express", "MongoDB", "Claude API"],
         image: "flowspace",
         links: {
             live: "https://flowspace-rahul.netlify.app",
