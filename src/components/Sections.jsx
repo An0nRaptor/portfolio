@@ -43,11 +43,6 @@ function SectionHeader({ eyebrow, title, children }) {
 export function Hero() {
     return (
         <section id="top" className="relative overflow-hidden">
-            {/* Grid + glow are plain gradients: cheap to paint, unlike CSS blur. */}
-            <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgb(148_163_184/0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgb(148_163_184/0.12)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_40%,transparent_100%)]"
-            />
             {/* Aurora: two slow-drifting gradients (transform-only animation). */}
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
                 <span className="aurora-a" />

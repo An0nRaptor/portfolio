@@ -169,6 +169,114 @@
     box-shadow: 0 24px 60px -24px rgb(31 163 163 / 0.35);
 }
 
+/* Page background (Background.jsx). Fixed behind everything; every layer
+   has its own GPU layer and only transform/opacity change, so scrolling and
+   cursor movement never trigger a repaint. */
+.bg-root {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    --tone-active: 31 163 163;
+}
+.bg-root[data-tone="experience"] {
+    --tone-active: 14 165 233;
+}
+.bg-root[data-tone="projects"] {
+    --tone-active: 99 102 241;
+}
+.bg-root[data-tone="contact"] {
+    --tone-active: 16 185 129;
+}
+.bg-dots {
+    position: absolute;
+    inset: 0;
+    transform: translateZ(0);
+    background-image: radial-gradient(circle at center, rgb(100 116 139 / 0.22) 1px, transparent 1.5px);
+    background-size: 24px 24px;
+}
+.dark .bg-dots {
+    background-image: radial-gradient(circle at center, rgb(148 163 184 / 0.12) 1px, transparent 1.5px);
+}
+/* Corner blobs, two per tone; only the active tone is visible. Inactive
+   tones are fully hidden once faded out, so the GPU never blends them. */
+.bg-glow {
+    position: absolute;
+    width: 44rem;
+    height: 36rem;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 1.2s ease,
+        visibility 0s linear 1.2s;
+    background: radial-gradient(closest-side, rgb(var(--tone) / 0.11), transparent);
+}
+.dark .bg-glow {
+    background: radial-gradient(closest-side, rgb(var(--tone) / 0.15), transparent);
+}
+.bg-glow-a {
+    right: -12rem;
+    top: -10rem;
+}
+.bg-glow-b {
+    left: -14rem;
+    bottom: -12rem;
+}
+.bg-glow-top {
+    --tone: 31 163 163;
+}
+.bg-glow-experience {
+    --tone: 14 165 233;
+}
+.bg-glow-projects {
+    --tone: 99 102 241;
+}
+.bg-glow-contact {
+    --tone: 16 185 129;
+}
+.bg-root[data-tone="top"] .bg-glow-top,
+.bg-root[data-tone="experience"] .bg-glow-experience,
+.bg-root[data-tone="projects"] .bg-glow-projects,
+.bg-root[data-tone="contact"] .bg-glow-contact {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.2s ease;
+}
+/* Cursor layers: moved with transform from Background.jsx. */
+.bg-spot,
+.bg-canvas,
+.bg-twinkle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+.bg-canvas {
+    opacity: 1;
+}
+.bg-spot {
+    width: 600px;
+    height: 600px;
+    border-radius: 9999px;
+    background: radial-gradient(circle closest-side, rgb(var(--tone-active) / 0.09), transparent);
+}
+.dark .bg-spot {
+    background: radial-gradient(circle closest-side, rgb(var(--tone-active) / 0.13), transparent);
+}
+.bg-twinkle {
+    width: 3px;
+    height: 3px;
+    margin: 10.5px 0 0 10.5px;
+    border-radius: 9999px;
+    background: rgb(var(--tone-active) / 0.6);
+    box-shadow: 0 0 6px rgb(var(--tone-active) / 0.6);
+}
+.dark .bg-twinkle {
+    background: rgb(var(--tone-active) / 0.85);
+}
+
 /* Command palette (CommandPalette.jsx): backdrop fades, panel pops in. */
 .cmdk-backdrop {
     animation: fade-in 0.2s ease-out both;
@@ -202,5 +310,8 @@
     .cmdk-backdrop,
     .cmdk-panel {
         animation: none;
+    }
+    .bg-glow {
+        transition: none;
     }
 }
