@@ -40,22 +40,12 @@ export default function Navbar() {
     const [paletteOpen, setPaletteOpen] = useState(false);
     const [modKey, setModKey] = useState("Ctrl");
     const headerRef = useRef(null);
-    const progressRef = useRef(null);
 
-    // Scroll state + reading progress bar (scaled directly, no re-render).
     useEffect(() => {
-        const onScroll = () => {
-            setScrolled(window.scrollY > 8);
-            const max = document.documentElement.scrollHeight - window.innerHeight;
-            if (progressRef.current) progressRef.current.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
-        };
+        const onScroll = () => setScrolled(window.scrollY > 8);
         onScroll();
         window.addEventListener("scroll", onScroll, { passive: true });
-        window.addEventListener("resize", onScroll);
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-            window.removeEventListener("resize", onScroll);
-        };
+        return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
     // Ctrl/⌘+K (or "/") opens the command palette.
@@ -115,7 +105,6 @@ export default function Navbar() {
                           : "border-b border-transparent"
                 }`}
             >
-                <span aria-hidden="true" ref={progressRef} className="absolute inset-x-0 bottom-[-1px] h-0.5 origin-left scale-x-0 bg-gradient-to-r from-accent-500 via-sky-500 to-accent-300" />
                 <nav className="mx-auto flex h-16 max-w-content items-center justify-between px-5 sm:px-8" aria-label="Main">
                     <a href="#top" className="font-display text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">
                         rahul<span className="text-accent-600 dark:text-accent-400">.</span>yadav
