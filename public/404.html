@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Page not found · Rahul Yadav</title>
+        <meta name="robots" content="noindex" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <!-- Netlify serves this for any missing path. Self-contained on
+             purpose: same colours and theme as the main site, no JS bundle. -->
+        <script>
+            (function () {
+                try {
+                    var saved = localStorage.getItem("theme");
+                    var dark = saved
+                        ? saved === "dark"
+                        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+                    if (dark) document.documentElement.classList.add("dark");
+                } catch (e) {}
+            })();
+        </script>
+        <style>
+            :root {
+                --bg: #ffffff;
+                --text: #334155;
+                --muted: #64748b;
+                --heading: #0f172a;
+                --line: rgb(148 163 184 / 0.12);
+                --card: #0d1b1e;
+                --accent: #168385;
+            }
+            .dark {
+                --bg: #0b1416;
+                --text: #cbd5e1;
+                --muted: #94a3b8;
+                --heading: #ffffff;
+                --accent: #38bfbd;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: grid;
+                place-items: center;
+                padding: 2rem 1.25rem;
+                background: var(--bg);
+                color: var(--text);
+                font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+                -webkit-font-smoothing: antialiased;
+                overflow: hidden;
+            }
+            .grid {
+                position: fixed;
+                inset: 0;
+                pointer-events: none;
+                background-image:
+                    linear-gradient(to right, var(--line) 1px, transparent 1px),
+                    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+                background-size: 48px 48px;
+                mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 100%);
+            }
+            .glow {
+                position: fixed;
+                left: 50%;
+                top: 30%;
+                width: 50rem;
+                height: 50rem;
+                margin: -25rem 0 0 -25rem;
+                border-radius: 9999px;
+                pointer-events: none;
+                background: radial-gradient(circle, rgb(31 163 163 / 0.2), transparent 62%);
+                animation: drift 14s ease-in-out infinite alternate;
+            }
+            main {
+                position: relative;
+                width: 100%;
+                max-width: 36rem;
+                text-align: center;
+            }
+            .code {
+                position: relative;
+                margin: 0;
+                font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+                font-size: clamp(6rem, 24vw, 10rem);
+                font-weight: 800;
+                line-height: 1;
+                letter-spacing: -0.05em;
+                background: linear-gradient(to right, #16696b, #0369a1);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+            .dark .code {
+                background-image: linear-gradient(to right, #6bd9d4, #38bdf8);
+            }
+            /* Two offset copies that flicker briefly: a small glitch. */
+            .code::before,
+            .code::after {
+                content: attr(data-text);
+                position: absolute;
+                inset: 0;
+                background: inherit;
+                -webkit-background-clip: text;
+                background-clip: text;
+                opacity: 0;
+            }
+            .code::before {
+                animation: glitch-a 4s infinite steps(1);
+            }
+            .code::after {
+                animation: glitch-b 4s infinite steps(1);
+            }
+            h1 {
+                margin: 0.75rem 0 0;
+                color: var(--heading);
+                font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+                font-size: clamp(1.5rem, 5vw, 2rem);
+                letter-spacing: -0.02em;
+            }
+            p.lead {
+                margin: 0.75rem auto 0;
+                max-width: 28rem;
+                line-height: 1.6;
+                color: var(--muted);
+            }
+            .term {
+                margin: 2rem auto 0;
+                max-width: 28rem;
+                overflow: hidden;
+                border: 1px solid rgb(255 255 255 / 0.1);
+                border-radius: 1rem;
+                background: var(--card);
+                text-align: left;
+                box-shadow: 0 25px 50px -12px rgb(23 70 72 / 0.35);
+            }
+            .bar {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                padding: 0.75rem 1rem;
+                border-bottom: 1px solid rgb(255 255 255 / 0.1);
+            }
+            .bar span {
+                width: 0.75rem;
+                height: 0.75rem;
+                border-radius: 9999px;
+            }
+            .bar em {
+                margin-left: 0.5rem;
+                font: 12px ui-monospace, "Cascadia Code", Consolas, monospace;
+                font-style: normal;
+                color: #94a3b8;
+            }
+            pre {
+                margin: 0;
+                padding: 1rem 1.25rem 1.25rem;
+                font: 13px/1.9 ui-monospace, "Cascadia Code", Consolas, monospace;
+                color: #cbd5e1;
+                white-space: pre-wrap;
+                word-break: break-all;
+            }
+            .p {
+                color: #6bd9d4;
+            }
+            .err {
+                color: #fca5a5;
+            }
+            .dim {
+                color: #64748b;
+            }
+            .caret {
+                display: inline-block;
+                width: 0.55em;
+                height: 1.1em;
+                vertical-align: -0.2em;
+                background: #6bd9d4;
+                animation: blink 1s steps(1) infinite;
+            }
+            .actions {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.75rem;
+                margin-top: 2rem;
+            }
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.65rem 1.25rem;
+                border-radius: 9999px;
+                font-size: 0.875rem;
+                font-weight: 600;
+                text-decoration: none;
+                transition: background 0.15s, border-color 0.15s;
+            }
+            .btn-primary {
+                background: #0f172a;
+                color: #fff;
+            }
+            .btn-primary:hover {
+                background: #334155;
+            }
+            .dark .btn-primary {
+                background: #fff;
+                color: #0f172a;
+            }
+            .dark .btn-primary:hover {
+                background: #e2e8f0;
+            }
+            .btn-ghost {
+                border: 1px solid #cbd5e1;
+                color: var(--heading);
+            }
+            .btn-ghost:hover {
+                border-color: var(--heading);
+            }
+            .dark .btn-ghost {
+                border-color: #334155;
+            }
+            .btn:focus-visible {
+                outline: 2px solid #1fa3a3;
+                outline-offset: 3px;
+            }
+            @keyframes drift {
+                to {
+                    transform: translate(6rem, 4rem) scale(1.1);
+                }
+            }
+            @keyframes blink {
+                50% {
+                    opacity: 0;
+                }
+            }
+            @keyframes glitch-a {
+                0%, 90%, 94%, 100% { opacity: 0; transform: none; }
+                91% { opacity: 0.7; transform: translate(-4px, 2px); clip-path: inset(10% 0 55% 0); }
+                93% { opacity: 0.7; transform: translate(3px, -1px); clip-path: inset(60% 0 8% 0); }
+            }
+            @keyframes glitch-b {
+                0%, 91%, 95%, 100% { opacity: 0; transform: none; }
+                92% { opacity: 0.6; transform: translate(4px, -2px); clip-path: inset(40% 0 30% 0); }
+                94% { opacity: 0.6; transform: translate(-3px, 1px); clip-path: inset(5% 0 75% 0); }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .glow,
+                .caret,
+                .code::before,
+                .code::after {
+                    animation: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid" aria-hidden="true"></div>
+        <div class="glow" aria-hidden="true"></div>
+        <main>
+            <p class="code" data-text="404" aria-hidden="true">404</p>
+            <h1>This page didn’t ship.</h1>
+            <p class="lead">The link may be old or mistyped. Everything I’ve built is on the home page.</p>
+
+            <div class="term" aria-hidden="true">
+                <div class="bar">
+                    <span style="background: #ff5f57cc"></span>
+                    <span style="background: #febc2ecc"></span>
+                    <span style="background: #28c840cc"></span>
+                    <em>zsh · rahul.yadav</em>
+                </div>
+                <pre><span class="p">~</span> <span class="dim">$</span> cd <span id="path">/missing-page</span>
+<span class="err">cd: no such file or directory</span>
+<span class="p">~</span> <span class="dim">$</span> cd /home <span class="dim"># try this instead</span>
+<span class="p">~</span> <span class="dim">$</span> <span class="caret"></span></pre>
+            </div>
+
+            <div class="actions">
+                <a class="btn btn-primary" href="/">← Back to home</a>
+                <a class="btn btn-ghost" href="/#projects">See projects</a>
+            </div>
+        </main>
+        <script>
+            // Show the path that was actually requested in the terminal.
+            var el = document.getElementById("path");
+            var path = location.pathname;
+            try {
+                path = decodeURIComponent(path);
+            } catch (e) {}
+            if (path && path !== "/404.html") el.textContent = path.length > 40 ? path.slice(0, 40) + "…" : path;
+        </script>
+    </body>
+</html>

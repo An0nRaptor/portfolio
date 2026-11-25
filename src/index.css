@@ -50,6 +50,9 @@
     .tag {
         @apply rounded-full bg-slate-100 px-2.5 py-1 font-mono text-[11px] font-medium text-slate-600 dark:bg-white/5 dark:text-slate-400;
     }
+    .kbd {
+        @apply inline-flex min-w-[1.5rem] items-center justify-center rounded-md border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-mono text-[11px] font-medium text-slate-500 shadow-[0_1px_0_rgb(148_163_184/0.5)] dark:border-white/10 dark:bg-white/5 dark:text-slate-400 dark:shadow-[0_1px_0_rgb(255_255_255/0.08)];
+    }
     .field {
         @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500/30 dark:border-white/10 dark:bg-white/5 dark:text-white;
     }
@@ -166,6 +169,25 @@
     box-shadow: 0 24px 60px -24px rgb(31 163 163 / 0.35);
 }
 
+/* Command palette (CommandPalette.jsx): backdrop fades, panel pops in. */
+.cmdk-backdrop {
+    animation: fade-in 0.2s ease-out both;
+}
+.cmdk-panel {
+    animation: cmdk-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+}
+@keyframes cmdk-in {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.97);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .js .reveal {
         opacity: 1;
@@ -176,7 +198,9 @@
     .aurora-b,
     .caret,
     .code-line,
-    .float-slow {
+    .float-slow,
+    .cmdk-backdrop,
+    .cmdk-panel {
         animation: none;
     }
 }
