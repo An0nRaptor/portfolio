@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Mail, Send, CheckCircle2, Copy, Check } from "lucide-react";
 import { profile } from "../data.js";
 import { LinkedInIcon } from "./Icons.jsx";
+import { BrushStroke } from "./Motion.jsx";
 
 // Netlify Forms: posts url-encoded data to "/" with form-name matching the
 // hidden static form in index.html. Only works on a Netlify deploy.
@@ -52,6 +53,7 @@ export default function Contact() {
                     <div>
                         <p className="eyebrow">Contact</p>
                         <h2 className="section-title">Let’s build something together.</h2>
+                        <BrushStroke />
                         <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">
                             I’m open to frontend roles and interesting collaborations. Send a message and I’ll get back to you, usually within a day.
                         </p>

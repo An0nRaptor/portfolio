@@ -3,9 +3,13 @@ import { Hero, About, Experience, Skills, Learning, Projects, Credentials, Foote
 import Contact from "./components/Contact.jsx";
 import Background from "./components/Background.jsx";
 import useReveal from "./useReveal.js";
+import useSmoothScroll from "./useSmoothScroll.js";
+import useInkButtons from "./useInkButtons.js";
 
 export default function App() {
     useReveal();
+    useSmoothScroll();
+    useInkButtons();
     return (
         <>
             <a href="#about" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:shadow">

@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { ArrowRight, ArrowUpRight, ArrowUp, Boxes, BriefcaseBusiness, Check, Cloud, Container, Download, Gauge, Layers, MapPin, Mail, Sparkles } from "lucide-react";
 import { profile, experience, skills, projects, credentials, learning } from "../data.js";
 import { GitHubIcon, LinkedInIcon, SkillIcon } from "./Icons.jsx";
-import { CodeCard, CountUp, DecodeText, TiltCard, TypedWords } from "./Motion.jsx";
+import { BrushStroke, CodeCard, CountUp, CropMarks, DecodeText, InkText, TiltCard, TypedWords } from "./Motion.jsx";
+import useParallax from "../useParallax.js";
 
 // Icon keys used in data.js.
 const STAT_ICONS = { experience: BriefcaseBusiness, speed: Gauge, architecture: Boxes };
@@ -35,23 +37,27 @@ function SectionHeader({ eyebrow, title, children }) {
         <div className="reveal max-w-2xl">
             <p className="eyebrow">{eyebrow}</p>
             <h2 className="section-title">{title}</h2>
+            <BrushStroke />
             {children && <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-400">{children}</p>}
         </div>
     );
 }
 
 export function Hero() {
+    const ref = useRef(null);
+    useParallax(ref);
     return (
-        <section id="top" className="relative overflow-hidden">
-            {/* Aurora: two slow-drifting gradients (transform-only animation). */}
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <section id="top" ref={ref} className="relative overflow-hidden">
+            {/* Aurora: two slow-drifting gradients (transform-only animation),
+                shifted against the cursor for depth. */}
+            <div aria-hidden="true" className="depth pointer-events-none absolute inset-0 overflow-hidden" style={{ "--d": -28 }}>
                 <span className="aurora-a" />
                 <span className="aurora-b" />
             </div>
 
-            <div className="relative mx-auto grid max-w-content items-center gap-14 px-5 pb-16 pt-32 sm:px-8 md:pb-20 md:pt-40 lg:grid-cols-[1.2fr_1fr] lg:gap-12">
+            <div className="relative mx-auto grid max-w-content items-center gap-14 px-5 pb-16 pt-28 sm:px-8 md:pb-20 md:pt-32 lg:grid-cols-[1.2fr_1fr] lg:gap-12 lg:pt-28">
                 <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-                    <p className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+                    <p className="hero-in inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
                         <span className="relative flex h-1.5 w-1.5">
                             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75 motion-reduce:hidden" />
                             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-500" />
@@ -59,35 +65,49 @@ export function Hero() {
                         {profile.role}
                         <span className="inline-flex items-center gap-1"><MapPin size={12} /> {profile.location}</span>
                     </p>
-                    <h1 className="mt-7 text-[2.6rem] font-extrabold leading-[1.05] tracking-tight sm:text-6xl xl:text-[4.1rem]">
-                        Hi, I’m {profile.name}.
-                        <span className="mx-auto mt-4 block max-w-3xl bg-gradient-to-r from-accent-700 to-sky-700 bg-clip-text pb-1 text-2xl font-bold leading-[1.3] text-transparent sm:text-3xl lg:mx-0 lg:text-[2.1rem] dark:from-accent-300 dark:to-sky-400">
-                            {profile.headline}
+                    {/* Small greeting, the name on one line, then the headline.
+                        Each line slides up out of a mask on load. */}
+                    <h1 className="mt-6 text-[2.6rem] font-extrabold leading-[1.05] tracking-tight sm:text-6xl xl:text-[4.1rem]">
+                        <span className="rise-mask">
+                            <span className="rise text-xl font-semibold tracking-normal text-slate-500 sm:text-2xl dark:text-slate-400" style={{ animationDelay: "80ms" }}>
+                                Hi, I’m
+                            </span>
+                        </span>
+                        <span className="rise-mask mt-1">
+                            <span className="rise sm:whitespace-nowrap" style={{ animationDelay: "160ms" }}>{profile.name}.</span>
+                        </span>
+                        <span className="rise-mask mx-auto mt-4 max-w-3xl lg:mx-0">
+                            <span className="rise bg-gradient-to-r from-accent-700 to-sky-700 bg-clip-text pb-1 text-2xl font-bold leading-[1.3] text-transparent sm:text-3xl lg:text-[1.8rem] dark:from-accent-300 dark:to-sky-400" style={{ animationDelay: "260ms" }}>
+                                {profile.headline}
+                            </span>
                         </span>
                     </h1>
-                    <p className="mt-5 font-mono text-sm text-slate-600 dark:text-slate-400">
+                    <p className="hero-in mt-4 font-mono text-sm text-slate-600 dark:text-slate-400" style={{ animationDelay: "420ms" }}>
                         <span className="text-accent-600 dark:text-accent-400">&gt;</span> focus:{" "}
                         <span className="font-semibold text-slate-900 dark:text-white">
                             <TypedWords words={profile.focus} />
                         </span>
                     </p>
-                    <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">{profile.intro}</p>
-                    <div className="mt-9 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                    <p className="hero-in mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-[17px] dark:text-slate-400" style={{ animationDelay: "480ms" }}>{profile.intro}</p>
+                    <div className="hero-in mt-7 flex flex-wrap items-center justify-center gap-3 lg:justify-start" style={{ animationDelay: "560ms" }}>
                         <a href="#projects" className="btn-primary">
                             View my work <ArrowRight size={16} />
                         </a>
                         <a href="#contact" className="btn-ghost">Get in touch</a>
                         <span className="mx-1 hidden h-6 w-px bg-slate-200 sm:block dark:bg-white/10" />
-                        <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-full p-2.5 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-white">
-                            <GitHubIcon className="h-5 w-5" />
-                        </a>
-                        <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="rounded-full p-2.5 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-white">
-                            <LinkedInIcon className="h-5 w-5" />
-                        </a>
+                        {/* Icons wrap as a pair on narrow screens. */}
+                        <span className="flex items-center">
+                            <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-full p-2.5 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-white">
+                                <GitHubIcon className="h-5 w-5" />
+                            </a>
+                            <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="rounded-full p-2.5 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-white">
+                                <LinkedInIcon className="h-5 w-5" />
+                            </a>
+                        </span>
                 </div>
 
                 {/* Career path, oldest to current */}
-                <ol className="mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-slate-600 lg:justify-start dark:text-slate-400" aria-label="Career path">
+                <ol style={{ animationDelay: "640ms" }} className="hero-in mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-slate-600 lg:justify-start dark:text-slate-400" aria-label="Career path">
                     {[...experience].reverse().map((job, i, all) => (
                         <li key={job.company} className="flex items-center gap-3">
                             <span className={i === all.length - 1 ? "rounded-full bg-accent-50 px-3 py-1 font-semibold text-accent-800 ring-1 ring-accent-200 dark:bg-accent-500/10 dark:text-accent-300 dark:ring-accent-500/30" : "font-medium"}>
@@ -99,8 +119,8 @@ export function Hero() {
                 </ol>
                 </div>
 
-                <div className="mx-auto hidden w-full max-w-md md:block lg:max-w-none">
-                    <CodeCard file={profile.codeCard.file} fields={profile.codeCard.fields} />
+                <div className="depth mx-auto hidden w-full max-w-md md:block lg:max-w-none" style={{ "--d": 14 }}>
+                    <CodeCard {...profile.codeCard} />
                 </div>
             </div>
         </section>
@@ -114,7 +134,7 @@ export function About() {
                 <SectionHeader eyebrow="About" title={profile.aboutTitle} />
                 <div className="reveal space-y-5 text-base leading-relaxed text-slate-600 dark:text-slate-400">
                     {profile.about.map(p => (
-                        <p key={p.slice(0, 24)}>{p}</p>
+                        <InkText key={p.slice(0, 24)} text={p} />
                     ))}
                 </div>
             </div>
@@ -236,7 +256,7 @@ export function Experience() {
 export function Skills() {
     return (
         <section id="skills" className="section">
-            <SectionHeader eyebrow="Skills" title="Tools I use to ship">
+            <SectionHeader eyebrow="Skills" title="Tools I use">
                 Strongest in React and modern JavaScript, with enough backend and DevOps to take a feature end to end.
             </SectionHeader>
             <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -271,6 +291,7 @@ export function Learning() {
                         Now
                     </p>
                     <h2 id="learning-title" className="section-title">Currently learning</h2>
+                    <BrushStroke />
                 </div>
                 <p className="max-w-sm text-sm leading-relaxed text-slate-600 dark:text-slate-400">What I’m picking up next, mostly by building with it in side projects.</p>
             </div>
@@ -328,7 +349,8 @@ function Tags({ items }) {
 
 function FeaturedProject({ project }) {
     return (
-        <div className="reveal">
+        <div className="reveal relative">
+            <CropMarks />
             <TiltCard max={2.5} className="card group grid overflow-hidden lg:grid-cols-[1.25fr_1fr]">
                 <div className="aspect-[16/9] overflow-hidden border-b border-slate-200 bg-slate-100 lg:aspect-auto lg:border-b-0 lg:border-r dark:border-white/10 dark:bg-white/5">
                     <Picture
@@ -372,7 +394,8 @@ function FeaturedProject({ project }) {
 
 function ProjectCard({ project }) {
     return (
-        <div className="reveal">
+        <div className="reveal relative h-full">
+            <CropMarks />
             <TiltCard className="card group flex h-full flex-col overflow-hidden">
                 <div className="aspect-[16/9] overflow-hidden border-b border-slate-200 bg-slate-100 dark:border-white/10 dark:bg-white/5">
                     <Picture

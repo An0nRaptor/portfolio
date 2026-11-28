@@ -15,14 +15,26 @@ export const profile = {
         "I build fast, accessible React interfaces for products people rely on every day.",
     // Cycled one at a time in the hero ("focus: ...").
     focus: ["React", "Micro-frontends", "Performance", "Accessibility", "TypeScript"],
-    // The code card beside the hero text.
+    // The tabbed code card beside the hero text: rahul.ts (an object literal),
+    // now.md (what I'm doing now) and a terminal. Tabs rotate on their own.
     codeCard: {
         file: "rahul.ts",
         fields: [
             { key: "role", value: "Senior Software Engineer" },
+            { key: "basedIn", value: "Pune, India" },
+            { key: "experience", value: "~5 years" },
             { key: "stack", value: ["React", "TypeScript", "single-spa"] },
-            { key: "ships", value: "policy-servicing UIs" },
-            { key: "cares", value: ["performance", "a11y", "clean code"] }
+            { key: "openTo", value: ["collaborations", "side projects"] }
+        ],
+        now: [
+            "Building an AI task generator into FlowSpace",
+            "Shipping policy-servicing UIs at Virtusa",
+            "Learning the Next.js App Router"
+        ],
+        terminal: [
+            { cmd: "whoami", out: "Rahul Yadav, frontend engineer" },
+            { cmd: "cat stack.txt", out: "React · TypeScript · single-spa · Node.js" },
+            { cmd: "npm run ship", out: "✓ tests passed  ✓ a11y 100  ✓ deployed" }
         ]
     },
     intro:

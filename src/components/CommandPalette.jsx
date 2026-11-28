@@ -8,7 +8,9 @@ import { GitHubIcon, LinkedInIcon } from "./Icons.jsx";
 // Closed on first render, so the pre-rendered HTML matches on hydration.
 
 function buildCommands({ links, dark, toggleTheme }) {
-    const go = href => () => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    // Through Lenis when smooth scrolling is on (see useSmoothScroll), else native.
+    const go = href => () =>
+        window.__lenis ? window.__lenis.scrollTo(href) : document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     const open = url => () => window.open(url, "_blank", "noreferrer");
     const featured = projects.find(p => p.links.live);
     return [
